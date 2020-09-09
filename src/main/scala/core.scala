@@ -12,10 +12,14 @@ object core {
       .option("inferSchema", "true")
       .csv("src/main/resources/report.csv")
 
-    println("** Schema **")
+    formatedPrint("Schema")
     df.printSchema()
 
-    println("** DataFrame **")
+    formatedPrint("DataFrame")
     df.show(false)
+
+    def formatedPrint(word: String): Unit = {
+      println("*** " + word + " ***")
+    }
   }
 }
